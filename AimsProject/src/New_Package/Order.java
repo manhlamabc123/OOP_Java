@@ -1,10 +1,22 @@
 package New_Package;
 
+import java.lang.reflect.Array;
+
 public class Order {
     public static final int MAX_NUMBERS_ORDERED = 10;
     private int qtyOrdered = 0;
 
     private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
+
+    private int arrayLength (DigitalVideoDisc [] array) {
+        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] != null) {
+                count++;
+            }
+        }
+        return count;
+    }
 
     public void addDigitalVideoDisc(DigitalVideoDisc disc) {
         if(qtyOrdered >= MAX_NUMBERS_ORDERED) {
@@ -44,6 +56,19 @@ public class Order {
         }
 
         System.out.println("Remove " + disc.getTitle() + " successfully.");
+        return;
+    }
+
+    public void addDigitalVideoDisc(DigitalVideoDisc [] dvdList) {
+        if (arrayLength(dvdList) + qtyOrdered > 10) {
+            System.out.println("The order is full.");
+            return;
+        }
+
+        for (int i = 0; i < arrayLength(dvdList); i++, qtyOrdered++) {
+            itemsOrdered[qtyOrdered + 1] = dvdList[i];
+            System.out.println("Added successfully: " + dvdList[i].getTitle());
+        }
         return;
     }
 
