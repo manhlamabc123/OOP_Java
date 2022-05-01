@@ -72,6 +72,23 @@ public class Order {
         return;
     }
 
+    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
+        if (qtyOrdered + 1 > 10) {
+            System.out.println("The order is full.");
+            System.out.println("Cannot add: " + dvd1.getTitle());
+            return;
+        }
+        this.addDigitalVideoDisc(dvd1);
+        System.out.println("Added successfully: " + dvd1.getTitle());
+        if (qtyOrdered + 1 > 10) {
+            System.out.println("The order is full.");
+            System.out.println("Cannot add: " + dvd2.getTitle());
+            return;
+        }
+        this.addDigitalVideoDisc(dvd2);
+        System.out.println("Added successfully: " + dvd2.getTitle());
+    }
+
     public float totalCost() {
         float total = 0;
 
