@@ -12,6 +12,7 @@ public class MyDate {
     private static int day;
     private static int month;
     private static int year;
+    private Date dateOrder;
 
     public MyDate() {}
 

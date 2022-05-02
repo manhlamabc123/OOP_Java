@@ -28,5 +28,22 @@ public class Aims {
 
         System.out.print("Total Cost is: ");
         System.out.println(anOrder.totalCost());
+
+        Order secondOrder = new Order();
+        secondOrder.addDigitalVideoDisc(dvd1);
+        secondOrder.addDigitalVideoDisc(dvd2);
+
+        Order thirdOrder = new Order();
+        thirdOrder.addDigitalVideoDisc(dvd3);
+
+        System.out.println();
+        anOrder.print();
+        secondOrder.print();
+        thirdOrder.print();
+
+        System.out.println();
+        Order thirdOrder1 = new Order();
+        Order thirdOrder2 = new Order();
+        Order thirdOrder3 = new Order();
     }
 }

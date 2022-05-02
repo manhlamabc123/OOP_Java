@@ -1,12 +1,25 @@
 package New_Package;
 
 import java.lang.reflect.Array;
+import java.util.Date;
 
 public class Order {
     public static final int MAX_NUMBERS_ORDERED = 10;
     private int qtyOrdered = 0;
-
+    private MyDate orderDate;
+    private static int nbOrders = 0;
+    public static final int MAX_LIMITED_ORDERS = 5;
     private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
+
+    public Order() {
+        if (nbOrders >= MAX_LIMITED_ORDERS) {
+            System.out.println("Reached number orders limit.");
+            return;
+        }
+        Date today = new Date();
+        this.orderDate = new MyDate(today.getDate(), today.getMonth() + 1, today.getYear() + 1900);
+        nbOrders++;
+    }
 
     private int arrayLength (DigitalVideoDisc [] array) {
         int count = 0;
@@ -97,5 +110,14 @@ public class Order {
         }
 
         return total;
+    }
+
+    public void print() {
+        System.out.println("Date: " + orderDate.getDay() + "/" + orderDate.getMonth() + "/" + orderDate.getYear() + ".");
+        System.out.println("Ordered Items:");
+        for (int i = 0; i < qtyOrdered; i++) {
+            System.out.println((i + 1) + ". DVD - " + itemsOrdered[i].getTitle() + " - " + itemsOrdered[i].getCategory() + " - " + itemsOrdered[i].getDirector() + " - " + itemsOrdered[i].getLength() + ": " + itemsOrdered[i].getCost() + "$");
+        }
+        System.out.println("Total cost: " + totalCost());
     }
 }
