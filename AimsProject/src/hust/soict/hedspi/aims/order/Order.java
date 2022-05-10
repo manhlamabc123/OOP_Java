@@ -1,4 +1,7 @@
-package Aims;
+package hust.soict.hedspi.aims.order;
+
+import hust.soict.hedspi.aims.utils.MyDate;
+import hust.soict.hedspi.aims.disc.DigitalVideoDisc;
 
 import java.util.Date;
 

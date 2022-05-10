@@ -1,4 +1,7 @@
-package Aims;
+package hust.soict.hedspi.aims;
+
+import hust.soict.hedspi.aims.disc.DigitalVideoDisc;
+import hust.soict.hedspi.aims.order.Order;
 
 public class Aims {
     public static void main(String[] args) {

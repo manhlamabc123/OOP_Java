@@ -1,4 +1,4 @@
-package Aims;
+package hust.soict.hedspi.aims.utils;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
