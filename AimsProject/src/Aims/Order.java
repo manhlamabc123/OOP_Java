@@ -1,6 +1,5 @@
-package New_Package;
+package Aims;
 
-import java.lang.reflect.Array;
 import java.util.Date;
 
 public class Order {

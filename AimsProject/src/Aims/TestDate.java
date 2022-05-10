@@ -1,4 +1,4 @@
-package New_Package;
+package Aims;
 
 public class TestDate {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package New_Package;
+package Aims;
 
 public class TestPassingParameter {
     public static void main(String[] args) {
