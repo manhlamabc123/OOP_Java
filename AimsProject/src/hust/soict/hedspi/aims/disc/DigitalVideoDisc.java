@@ -74,20 +74,17 @@ public class DigitalVideoDisc {
 
     public boolean search(String string) {
         int count = 0;
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter your title: ");
-        String searchTitle = sc.next();
 
         String sTitle[] = title.split(" ");
-        String getTitle[] = searchTitle.split(" ");
+        String getTitle[] = string.split(" ");
         for(int i = 0;  i < getTitle.length; i++){
-            for(int j = 0; j < sTitle.length; i++){
-                if(sTitle[i].equalsIgnoreCase(getTitle[j])){
+            for(int j = 0; j < sTitle.length; j++){
+                if(sTitle[j].equalsIgnoreCase(getTitle[i])){
                     count++;
                 }
             }
         }
-        sc.close();
+
         if(count == sTitle.length)
             return true;
         return false;
