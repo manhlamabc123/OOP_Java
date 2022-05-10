@@ -1,4 +1,5 @@
 package hust.soict.hedspi.aims.order;
+import java.util.Random;
 
 import hust.soict.hedspi.aims.utils.MyDate;
 import hust.soict.hedspi.aims.disc.DigitalVideoDisc;
@@ -121,5 +122,18 @@ public class Order {
             System.out.println((i + 1) + ". DVD - " + itemsOrdered[i].getTitle() + " - " + itemsOrdered[i].getCategory() + " - " + itemsOrdered[i].getDirector() + " - " + itemsOrdered[i].getLength() + ": " + itemsOrdered[i].getCost() + "$");
         }
         System.out.println("Total cost: " + totalCost());
+    }
+
+    public DigitalVideoDisc getALuckyItem(){
+        Random rd = new Random();
+        int luckyNumber = rd.nextInt(this.qtyOrdered);
+        int i = 0;
+        for(i = 0; i <  this.qtyOrdered; i++){
+            if(i == luckyNumber){
+                this.itemsOrdered[i].setCost(0);
+                break;
+            }
+        }
+        return this.itemsOrdered[i];
     }
 }
