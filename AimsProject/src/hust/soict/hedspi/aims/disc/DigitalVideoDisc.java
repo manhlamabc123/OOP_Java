@@ -1,5 +1,7 @@
 package hust.soict.hedspi.aims.disc;
 
+import java.util.Scanner;
+
 public class DigitalVideoDisc {
     private String title;
     private String category;
@@ -68,5 +70,26 @@ public class DigitalVideoDisc {
 
     public void setCost(float cost) {
         this.cost = cost;
+    }
+
+    public boolean search(String string) {
+        int count = 0;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your title: ");
+        String searchTitle = sc.next();
+
+        String sTitle[] = title.split(" ");
+        String getTitle[] = searchTitle.split(" ");
+        for(int i = 0;  i < getTitle.length; i++){
+            for(int j = 0; j < sTitle.length; i++){
+                if(sTitle[i].equalsIgnoreCase(getTitle[j])){
+                    count++;
+                }
+            }
+        }
+        sc.close();
+        if(count == sTitle.length)
+            return true;
+        return false;
     }
 }

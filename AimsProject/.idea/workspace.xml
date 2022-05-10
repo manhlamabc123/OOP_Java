@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4fa51ce7-0a41-497b-898d-8a78b63d4d44" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aims/Aims.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/hedspi/aims/Aims.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aims/DigitalVideoDisc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/hedspi/aims/disc/DigitalVideoDisc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aims/MyDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AimsProject/MyDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aims/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AimsProject/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aims/TestDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AimsProject/TestDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aims/TestPassingParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AimsProject/TestPassingParameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/soict/hedspi/aims/disc/DigitalVideoDisc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/hedspi/aims/disc/DigitalVideoDisc.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
