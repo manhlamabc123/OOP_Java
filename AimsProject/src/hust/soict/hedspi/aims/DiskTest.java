@@ -19,13 +19,12 @@ public class DiskTest {
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladdin", "Animation", "John Musker", 90, 18.99f);
         anOrder.addDigitalVideoDisc(dvd3);
 
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter your title: ");
-        String searchTitle = sc.nextLine();
-        sc.close();
-        if (dvd1.search(searchTitle)) {
-            anOrder.getALuckyItem();
-            anOrder.print();
-        }
+        System.out.println(dvd1.search("The Lion") + "\n"
+                + dvd1.search("King Lion") + "\n"
+                + dvd1.search("Lio The") + "\n");
+
+        anOrder.print(); //Before LuckyItem
+        anOrder.getALuckyItem();
+        anOrder.print(); //After LuckyItem
     }
 }
