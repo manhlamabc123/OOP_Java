@@ -85,7 +85,7 @@ public class DigitalVideoDisc {
             }
         }
 
-        if(count == sTitle.length)
+        if(count == getTitle.length)
             return true;
         return false;
     }
