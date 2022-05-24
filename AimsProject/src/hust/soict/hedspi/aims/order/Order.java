@@ -44,15 +44,6 @@ public class Order {
         return total;
     }
 
-    public void print() {
-        System.out.println("Date: " + orderDate.getDay() + "/" + orderDate.getMonth() + "/" + orderDate.getYear() + ".");
-        System.out.println("Ordered Items:");
-        for (int i = 0; i < this.itemsOrdered.size(); i++) {
-            System.out.println((i + 1) + ". DVD - " + this.itemsOrdered.get(i).getTitle() + " - " + itemsOrdered[i].getCategory() + " - " + itemsOrdered[i].getDirector() + " - " + itemsOrdered[i].getLength() + ": " + itemsOrdered[i].getCost() + "$");
-        }
-        System.out.println("Total cost: " + totalCost());
-    }
-
     public Media getALuckyItem(){
         Random rd = new Random();
         int luckyNumber = rd.nextInt(this.itemsOrdered.size());
