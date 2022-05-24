@@ -2,7 +2,7 @@ package hust.soict.hedspi.aims.order;
 import java.util.Random;
 
 import hust.soict.hedspi.aims.utils.MyDate;
-import hust.soict.hedspi.aims.disc.DigitalVideoDisc;
+import hust.soict.hedspi.aims.media.DigitalVideoDisc;
 
 import java.util.Date;
 
