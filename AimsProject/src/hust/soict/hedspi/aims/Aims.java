@@ -1,7 +1,11 @@
 package hust.soict.hedspi.aims;
 
+import hust.soict.hedspi.aims.media.Book;
 import hust.soict.hedspi.aims.media.DigitalVideoDisc;
 import hust.soict.hedspi.aims.order.Order;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Aims {
     public static void main(String[] args) {
@@ -13,31 +17,31 @@ public class Aims {
         dvd1.setDirector("Roger Allers");
         dvd1.setLength(87);
 
-        anOrder.addDigitalVideoDisc(dvd1);
+        anOrder.addMedia(dvd1);
 
         DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars");
         dvd2.setCategory("Science Fiction");
         dvd2.setCost(24.95f);
         dvd2.setDirector("George Lucas");
         dvd2.setLength(124);
-        anOrder.addDigitalVideoDisc(dvd2);
+        anOrder.addMedia(dvd2);
 
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladdin");
         dvd3.setCategory("Animation");
         dvd3.setCost(18.99f);
         dvd3.setDirector("John Musker");
         dvd3.setLength(90);
-        anOrder.addDigitalVideoDisc(dvd3);
+        anOrder.addMedia(dvd3);
 
         System.out.print("Total Cost is: ");
         System.out.println(anOrder.totalCost());
 
         Order secondOrder = new Order();
-        secondOrder.addDigitalVideoDisc(dvd1);
-        secondOrder.addDigitalVideoDisc(dvd2);
+        secondOrder.addMedia(dvd1);
+        secondOrder.addMedia(dvd2);
 
         Order thirdOrder = new Order();
-        thirdOrder.addDigitalVideoDisc(dvd3);
+        thirdOrder.addMedia(dvd3);
 
         System.out.println();
         anOrder.print();

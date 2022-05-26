@@ -5,26 +5,23 @@ public class DigitalVideoDisc extends Media{
     private int length;
 
     public DigitalVideoDisc(String title) {
-        this.title = title;
+        super(title);
     }
 
     public DigitalVideoDisc(String title, String category) {
-        this.title = title;
-        this.category = category;
+        super(title, category);
     }
 
     public DigitalVideoDisc(String title, String category, String director) {
-        this.title = title;
-        this.category = category;
+        super(title, category);
         this.director = director;
     }
 
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
-        this.title = title;
-        this.category = category;
+        super(title, category);
         this.director = director;
         this.length = length;
-        this.cost = cost;
+        super.setCost(cost);
     }
 
     public String getDirector() {
@@ -46,7 +43,7 @@ public class DigitalVideoDisc extends Media{
     public boolean search(String string) {
         int count = 0;
 
-        String sTitle[] = title.split(" ");
+        String sTitle[] = super.getTitle().split(" ");
         String getTitle[] = string.split(" ");
         for(int i = 0;  i < getTitle.length; i++){
             for(int j = 0; j < sTitle.length; j++){

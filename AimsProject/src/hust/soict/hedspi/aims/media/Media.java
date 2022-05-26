@@ -5,6 +5,15 @@ public class Media {
     private String category;
     private float cost;
 
+    public Media(String title) {
+        this.title = title;
+    }
+
+    public Media(String title, String category) {
+        this.title = title;
+        this.category = category;
+    }
+
     public String getTitle() {
         return title;
     }

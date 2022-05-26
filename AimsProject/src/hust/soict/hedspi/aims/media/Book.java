@@ -1,12 +1,42 @@
 package hust.soict.hedspi.aims.media;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Book extends Media{
     private List<String> authors = new ArrayList<String>();
 
-    public Book() {}
+    public Book(String title) {
+        super(title);
+    }
+
+    public Book(String title, String category) {
+        super(title, category);
+    }
+
+    public Book(String title, String category, List<String> authors) {
+        super(title, category);
+        if(findDuplicates(authors).size() >= 1) {
+            System.out.println("Your list has duplicate items.");
+            return;
+        }
+        this.authors = authors;
+    }
+
+    public static Set<String> findDuplicates(List<String> listContainingDuplicates) {
+
+        final Set<String> setToReturn = new HashSet<String>();
+        final Set<String> set1 = new HashSet<String>();
+
+        for (String yourInt : listContainingDuplicates) {
+            if (!set1.add(yourInt)) {
+                setToReturn.add(yourInt);
+            }
+        }
+        return setToReturn;
+    }
 
     public List<String> getAuthors() {
         return authors;
