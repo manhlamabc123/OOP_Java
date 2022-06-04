@@ -3,6 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="4fa51ce7-0a41-497b-898d-8a78b63d4d44" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AimsProject/hust/soict/hedspi/aims/Aims.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AimsProject/hust/soict/hedspi/aims/Aims.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AimsProject/hust/soict/hedspi/aims/media/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AimsProject/hust/soict/hedspi/aims/media/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AimsProject/hust/soict/hedspi/aims/media/DigitalVideoDisc.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AimsProject/hust/soict/hedspi/aims/media/DigitalVideoDisc.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AimsProject/hust/soict/hedspi/aims/media/Media.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AimsProject/hust/soict/hedspi/aims/media/Media.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AimsProject/hust/soict/hedspi/aims/order/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AimsProject/hust/soict/hedspi/aims/order/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/soict/hedspi/aims/Aims.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/hedspi/aims/Aims.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/soict/hedspi/aims/DiskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/hedspi/aims/DiskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/soict/hedspi/aims/media/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/hedspi/aims/media/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/soict/hedspi/aims/media/DigitalVideoDisc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/hedspi/aims/media/DigitalVideoDisc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/soict/hedspi/aims/media/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/hedspi/aims/media/Media.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/soict/hedspi/aims/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/hedspi/aims/order/Order.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

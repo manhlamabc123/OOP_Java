@@ -18,10 +18,9 @@ public class DigitalVideoDisc extends Media{
     }
 
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
-        super(title, category);
+        super(title, category, cost);
         this.director = director;
         this.length = length;
-        super.setCost(cost);
     }
 
     public String getDirector() {
@@ -56,5 +55,10 @@ public class DigitalVideoDisc extends Media{
         if(count == getTitle.length)
             return true;
         return false;
+    }
+
+    @Override
+    public void printDetail(){
+        System.out.println("DVD: " + this.ID + " - " + this.getTitle() + " - " + this.getCategory() + " - " + this.getCost());
     }
 }

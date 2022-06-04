@@ -25,6 +25,11 @@ public class Book extends Media{
         this.authors = authors;
     }
 
+    public Book(String title, String category, float cost, List<String> authors) {
+        super(title, category, cost);
+        this.authors = authors;
+    }
+
     public static Set<String> findDuplicates(List<String> listContainingDuplicates) {
 
         final Set<String> setToReturn = new HashSet<String>();
@@ -64,5 +69,14 @@ public class Book extends Media{
 
         authors.remove(authorName);
         System.out.println("Deleted " + authorName + " successfully.");
+    }
+
+    @Override
+    public void printDetail(){
+        System.out.print("Book: " + this.ID + " - " + this.getTitle() + " - " + this.getCategory() + " - " + this.getCost() + " - ");
+        for (int i = 0; i < authors.size(); i++){
+            System.out.print(authors.get(i));
+            if(i != authors.size() - 1) System.out.print(" & ");
+        }
     }
 }

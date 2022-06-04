@@ -21,8 +21,8 @@ public class DiskTest {
                 + dvd1.search("King Lion") + "\n"
                 + dvd1.search("Lio The") + "\n");
 
-        anOrder.print(); //Before LuckyItem
-        anOrder.getALuckyItem();
-        anOrder.print(); //After LuckyItem
+//        anOrder.print(); //Before LuckyItem
+//        anOrder.getALuckyItem();
+//        anOrder.print(); //After LuckyItem
     }
 }
