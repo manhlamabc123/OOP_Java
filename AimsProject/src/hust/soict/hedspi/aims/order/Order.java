@@ -53,18 +53,18 @@ public class Order {
         System.out.println("Total cost: " + totalCost());
     }
 
-    public Media getALuckyItem(){
-        Random rd = new Random();
-        int luckyNumber = rd.nextInt(this.itemsOrdered.size());
-        int i = 0;
-        for(i = 0; i <  this.itemsOrdered.size(); i++){
-            if(i == luckyNumber){
-                this.itemsOrdered.get(i).setCost(0);
-                break;
-            }
-        }
-        return this.itemsOrdered.get(i);
-    }
+//    public Media getALuckyItem(){
+//        Random rd = new Random();
+//        int luckyNumber = rd.nextInt(this.itemsOrdered.size());
+//        int i = 0;
+//        for(i = 0; i <  this.itemsOrdered.size(); i++){
+//            if(i == luckyNumber){
+//                this.itemsOrdered.get(i).setCost(0);
+//                break;
+//            }
+//        }
+//        return this.itemsOrdered.get(i);
+//    }
 
     public void addItemToOrder(){
         System.out.print("What do you want to add? Book or Disc: ");
@@ -131,7 +131,7 @@ public class Order {
             System.out.print("Cost: ");
             sc = new Scanner(System.in);
             float cost = sc.nextFloat();
-            Media media = new DigitalVideoDisc(title, category, director, length, cost);
+            Media media = new DigitalVideoDisc(title, category, cost, length, director);
             this.addMedia(media);
             System.out.println("Add Disc successfully!");
         } catch (Exception ex) {
