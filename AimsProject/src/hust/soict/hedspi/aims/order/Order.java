@@ -1,10 +1,8 @@
 package hust.soict.hedspi.aims.order;
 import java.util.*;
 
-import hust.soict.hedspi.aims.media.Book;
-import hust.soict.hedspi.aims.media.DigitalVideoDisc;
+import hust.soict.hedspi.aims.media.*;
 import hust.soict.hedspi.aims.utils.MyDate;
-import hust.soict.hedspi.aims.media.Media;
 
 public class Order {
     public static final int MAX_NUMBERS_ORDERED = 10;
@@ -67,14 +65,46 @@ public class Order {
 //    }
 
     public void addItemToOrder(){
-        System.out.print("What do you want to add? Book or Disc: ");
+        Scanner userChoice = null;
+        String input = null;
+        Media media = null;
+        System.out.print("What do you want to add? Book(1), Digital Video Disc(2), Compact Disc(3): ");
         Scanner sc = new Scanner(System.in);
         switch (sc.nextLine()){
-            case "Book":
+            case "1":
                 this.addBook();
                 break;
-            case "Disc":
-                this.addDisc();
+            case "2":
+                this.addDigitalCompactDisc();
+                System.out.print("Play? (Yes/No) ");
+                userChoice = new Scanner(System.in);
+                input = userChoice.nextLine();
+                if (input.equalsIgnoreCase("No")) {
+                    break;
+                }
+                else if (!input.equalsIgnoreCase("Yes")) {
+                    System.out.println("Invalid Choice.");
+                    break;
+                }
+                media = this.itemsOrdered.get(itemsOrdered.size() - 1);
+                DigitalVideoDisc digitalVideoDisc = (DigitalVideoDisc)media;
+                digitalVideoDisc.play();
+                break;
+            case "3":
+                this.addCompactDisc();
+                System.out.print("Play? (Yes/No) ");
+                userChoice = new Scanner(System.in);
+                input = userChoice.nextLine();
+                if (input.equalsIgnoreCase("No")) {
+                    break;
+                }
+                else if (!input.equalsIgnoreCase("Yes")) {
+                    System.out.println("Invalid Choice.");
+                    break;
+                }
+                media = this.itemsOrdered.get(itemsOrdered.size() - 1);
+                CompactDisc compactDisc = (CompactDisc) media;
+                compactDisc.play();
                 break;
             default:
                 System.out.println("Invalid Choice.");
@@ -113,7 +143,7 @@ public class Order {
         }
     }
 
-    private void addDisc(){
+    private void addDigitalCompactDisc(){
         try {
             Scanner sc = null;
             System.out.print("Title: ");
@@ -133,7 +163,47 @@ public class Order {
             float cost = sc.nextFloat();
             Media media = new DigitalVideoDisc(title, category, cost, length, director);
             this.addMedia(media);
-            System.out.println("Add Disc successfully!");
+            System.out.println("Add Digital Video Disc successfully!");
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
+        }
+    }
+
+    private void addCompactDisc(){
+        try {
+            Scanner sc = null;
+            System.out.print("Title: ");
+            sc = new Scanner(System.in);
+            String title = sc.nextLine();
+            System.out.print("Category: ");
+            sc = new Scanner(System.in);
+            String category = sc.nextLine();
+            System.out.print("Director: ");
+            sc = new Scanner(System.in);
+            String director = sc.nextLine();
+            System.out.print("Cost: ");
+            sc = new Scanner(System.in);
+            float cost = sc.nextFloat();
+            System.out.print("Artist: ");
+            sc = new Scanner(System.in);
+            String artist = sc.nextLine();
+            ArrayList<Track> tracks = new ArrayList<Track>();
+            System.out.print("Number of track: ");
+            sc = new Scanner(System.in);
+            int number = sc.nextInt();
+            for(int i = 0; i < number; i++){
+                System.out.print(i + ". Title: ");
+                sc = new Scanner(System.in);
+                String trackTitle = sc.nextLine();
+                System.out.print(i + ". Length: ");
+                sc = new Scanner(System.in);
+                int trackLength = sc.nextInt();
+                Track newTrack = new Track(trackTitle, trackLength);
+                tracks.add(newTrack);
+            }
+            Media media = new CompactDisc(title, category, cost, director, artist, tracks);
+            this.addMedia(media);
+            System.out.println("Add Compact Disc successfully!");
         } catch (Exception ex) {
             System.out.println(ex.toString());
         }

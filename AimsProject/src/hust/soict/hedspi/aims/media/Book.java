@@ -78,5 +78,6 @@ public class Book extends Media{
             System.out.print(authors.get(i));
             if(i != authors.size() - 1) System.out.print(" & ");
         }
+        System.out.println();
     }
 }
