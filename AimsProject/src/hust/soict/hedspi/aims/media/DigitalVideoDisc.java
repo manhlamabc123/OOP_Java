@@ -1,6 +1,8 @@
 package hust.soict.hedspi.aims.media;
 
-public class DigitalVideoDisc extends Disc{
+import hust.soict.hedspi.aims.Playable;
+
+public class DigitalVideoDisc extends Disc implements Playable {
 
     public DigitalVideoDisc(String title, String category, float cost, int length, String director) {
         super(title, category, cost, length, director);
@@ -27,5 +29,10 @@ public class DigitalVideoDisc extends Disc{
     @Override
     public void printDetail(){
         System.out.println("DVD: " + this.ID + " - " + this.getTitle() + " - " + this.getCategory() + " - " + this.getCost());
+    }
+
+    @Override public void play(){
+        System.out.println("Playing DVD: " + this.getTitle());
+        System.out.println("DVD length: " + this.getLength());
     }
 }
