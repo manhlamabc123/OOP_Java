@@ -2,7 +2,7 @@ package hust.soict.hedspi.aims.media;
 
 import hust.soict.hedspi.aims.Playable;
 
-public class DigitalVideoDisc extends Disc implements Playable {
+public class DigitalVideoDisc extends Disc implements Playable, Comparable {
 
     public DigitalVideoDisc(String title, String category, float cost, int length, String director) {
         super(title, category, cost, length, director);

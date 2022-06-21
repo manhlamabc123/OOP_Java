@@ -4,7 +4,7 @@ import hust.soict.hedspi.aims.Playable;
 
 import java.util.ArrayList;
 
-public class CompactDisc extends Disc implements Playable {
+public class CompactDisc extends Disc implements Playable, Comparable{
     private String artist;
     private ArrayList<Track> tracks = new ArrayList<Track>();
 
