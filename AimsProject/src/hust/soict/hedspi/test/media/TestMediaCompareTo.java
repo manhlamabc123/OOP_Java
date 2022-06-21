@@ -11,10 +11,10 @@ public class TestMediaCompareTo {
     public static void main(String[] args) {
         ArrayList<Media> collection = new ArrayList<Media>();
 
-        Book book = new Book("Book of Moon");
-        Book book01 = new Book("Book of Sun");
-        Book book02 = new Book("Book of Secret");
-        Book book03 = new Book("Book of Eternity");
+        Book book = new Book("Book of Moon", "Category", 1000);
+        Book book01 = new Book("Book of Sun", "Category", 5000);
+        Book book02 = new Book("Book of Secret", "Category", 4000);
+        Book book03 = new Book("Book of Eternity", "Category", 3500);
 
         collection.add(book);
         collection.add(book01);
@@ -25,8 +25,10 @@ public class TestMediaCompareTo {
 
         System.out.println("-----------------------------------");
         System.out.println("The DVDs currently in the order are: ");
+        Book nowBook = null;
         while (iterator.hasNext()) {
-            System.out.println( ((Book)iterator.next()).getTitle() );
+            nowBook = (Book)iterator.next();
+            System.out.println( nowBook.getTitle() + ": " + nowBook.getCost());
         }
 
         Collections.sort((List)collection);
@@ -35,7 +37,8 @@ public class TestMediaCompareTo {
         System.out.println("---------------------------------");
         System.out.println("The DVDs in sorted order are: ");
         while (iterator.hasNext()){
-            System.out.println( ((Book)iterator.next()).getTitle() );
+            nowBook = (Book)iterator.next();
+            System.out.println( nowBook.getTitle() + ": " + nowBook.getCost());
         }
         System.out.println("----------------------------------------------");
     }

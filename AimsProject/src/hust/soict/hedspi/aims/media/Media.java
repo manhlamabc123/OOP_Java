@@ -57,7 +57,10 @@ public abstract class Media implements Comparable{
         try {
             if(!(obj instanceof Book)) throw new Exception("Not the same Object.");
             Media media = (Media) obj;
-            return this.getTitle().compareTo(media.getTitle());
+            if (this.getCost() == media.getCost()) return 0;
+            if (this.getCost() > media.getCost()) return 1;
+            if (this.getCost() < media.getCost()) return -1;
+            return -1;
         } catch (Exception exception) {
             System.out.println(exception.toString());
             return -1;

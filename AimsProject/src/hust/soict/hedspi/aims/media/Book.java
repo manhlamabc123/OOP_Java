@@ -8,6 +8,9 @@ import java.util.Set;
 public class Book extends Media {
     private List<String> authors = new ArrayList<String>();
 
+    public Book(String title, String category, float cost) {
+        super(title, category, cost);
+    }
     public Book(String title) {
         super(title);
     }
