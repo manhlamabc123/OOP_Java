@@ -45,4 +45,11 @@ public abstract class Media {
     }
 
     public void printDetail() {}
+
+    @Override public boolean equals(Object o){
+        if (!(o instanceof Media)) return false;
+        Media obj = (Media) o;
+        if (this.getID() == obj.getID()) return true;
+        return false;
+    }
 }
