@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class Book extends Media implements Comparable{
+public class Book extends Media {
     private List<String> authors = new ArrayList<String>();
 
     public Book(String title) {

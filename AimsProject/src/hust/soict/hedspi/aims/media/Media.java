@@ -1,6 +1,6 @@
 package hust.soict.hedspi.aims.media;
 
-public abstract class Media {
+public abstract class Media implements Comparable{
     private String title;
     private String category;
     private float cost;
@@ -51,5 +51,16 @@ public abstract class Media {
         Media obj = (Media) o;
         if (this.getID() == obj.getID()) return true;
         return false;
+    }
+
+    @Override public int compareTo(Object obj){
+        try {
+            if(!(obj instanceof Book)) throw new Exception("Not the same Object.");
+            Media media = (Media) obj;
+            return this.getTitle().compareTo(media.getTitle());
+        } catch (Exception exception) {
+            System.out.println(exception.toString());
+            return -1;
+        }
     }
 }
