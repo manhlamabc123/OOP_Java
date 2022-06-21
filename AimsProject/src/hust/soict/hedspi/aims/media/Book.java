@@ -1,12 +1,15 @@
 package hust.soict.hedspi.aims.media;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import com.sun.jdi.Value;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Book extends Media {
     private List<String> authors = new ArrayList<String>();
+    private String content;
+    private List<String> contentTokens = new ArrayList<String>();
+    private Map<String, Integer> wordFrequency = new HashMap<>();
 
     public Book(String title, String category, float cost) {
         super(title, category, cost);
@@ -82,5 +85,51 @@ public class Book extends Media {
             if(i != authors.size() - 1) System.out.print(" & ");
         }
         System.out.println();
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+        processContent();
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    private void processContent(){
+        String content = removePunctuations(this.getContent()).toLowerCase();
+        content = content.replaceAll("\\s+"," ");
+        String[] tokens = content.split(" ");
+        Arrays.sort(tokens);
+
+        int frequency = 1;
+        for(int i=0; i<tokens.length; i++) {
+            if(i == tokens.length - 1) {
+                if(tokens[i].equals(tokens[i - 1])){
+                    frequency++;
+                    this.wordFrequency.put(tokens[i], frequency);
+                    return;
+                } else {
+                    this.wordFrequency.put(tokens[i], 1);
+                    return;
+                }
+            }
+            if(tokens[i].equals(tokens[i+1])){
+                frequency++;
+            } else {
+                this.wordFrequency.put(tokens[i], frequency);
+                frequency = 1;
+            }
+            this.contentTokens.add(tokens[i]);
+        }
+    }
+
+    @Override public String toString(){
+        return "Book: " + this.ID + " - " + this.getTitle() + " - " + this.getCategory() + " - " +
+                this.getCost() + " - " + this.authors.toString() + "\n" + this.getContent() + "\n" + this.contentTokens.toString() + "\n" + this.wordFrequency;
+    }
+
+    public static String removePunctuations(String source) {
+        return source.replaceAll("\\p{Punct}|\\p{Space}", " ");
     }
 }
