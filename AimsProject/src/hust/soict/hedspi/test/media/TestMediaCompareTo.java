@@ -9,7 +9,7 @@ import java.util.List;
 
 public class TestMediaCompareTo {
     public static void main(String[] args) {
-        ArrayList<Media> collection = new ArrayList<Media>();
+        List<Media> collection = new ArrayList<Media>();
 
         Book book = new Book("Book of Moon", "Category", 1000);
         Book book01 = new Book("Book of Sun", "Category", 5000);
